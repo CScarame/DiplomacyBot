@@ -1,0 +1,10 @@
+{ "Countries":{
+    "Austria-Hungary": {"color": "c48f85", "home": ["bud", "tri", "vie"], "power": ["bud", "tri", "vie"],  "prov": ["boh","bud", "gal", "tri", "tyr", "vie"], "army": ["bud", "vie"], "fleet": ["tri"], "coast": [0]},
+    "England": {"color": "efc4e4", "home": ["edi", "lvp", "lon"], "power": ["edi", "lvp", "lon"], "prov": ["cly", "edi", "lvp", "lon", "wal", "yor"], "army": ["lvp"], "fleet": ["edi","lon"], "coast": [0,0]},
+    "France":  {"color": "79afc6", "home": ["bre", "mar", "par"], "power": ["bre", "mar", "par"], "prov": ["bre", "bur", "gas", "mar", "par", "pic"], "army": ["mar", "par"], "fleet": ["bre"], "coast": [0]},
+    "Germany": {"color": "a08a75", "home": ["ber", "kie", "mun"], "power": ["ber", "kie", "mun"], "prov": ["ber", "kie", "mun", "pru", "ruh", "sil"], "army": ["ber", "mun"], "fleet": ["kie"], "coast": [0]},
+    "Italy":   {"color": "a4c499", "home": ["nap", "rom", "ven"], "power": ["nap", "rom", "ven"], "prov": ["apu", "nap", "pie", "rom", "tus", "ven"], "army": ["rom", "ven"], "fleet": ["nap"], "coast": [0]},
+    "Russia":  {"color": "a87e9f", "home": ["mos", "sev", "stp", "war"], "power": ["mos", "sev", "stp", "war"], "prov": ["fin", "lvn", "mos", "sev", "stp", "ukr", "war"], "army": ["mos", "war"], "fleet": ["sev", "stp"], "coast": [0,2]},
+    "Turkey":  {"color": "eaeaaf", "home": ["ank", "con", "smy"], "power": ["ank", "con", "smy"], "prov": ["ank","arm", "con", "smy", "syr"], "army": ["con", "smy"], "fleet": ["ank"], "coast": [0]}
+},
+"Turn": {"year": 1900, "season": "Fall"}}

@@ -1,0 +1,1244 @@
+{
+    "adr": {
+        "water_location": "616x641",
+        "control": "",
+        "form": "WATER",
+        "water_adjacent": [
+            "alb",
+            "apu",
+            "ion",
+            "tri",
+            "ven"
+        ],
+        "name": "Adriatic Sea"
+    },
+    "aeg": {
+        "water_location": "784x722",
+        "control": "",
+        "form": "WATER",
+        "water_adjacent": [
+            "bla",
+            "bul",
+            "con",
+            "eas",
+            "gre",
+            "ion",
+            "smy"
+        ],
+        "name": "Aegean Sea"
+    },
+    "alb": {
+        "water_location": "681x685",
+        "control": "",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "681x685",
+        "name": "Albania",
+        "power": 0,
+        "water_adjacent": [
+            "adr",
+            "gre",
+            "ion",
+            "ser",
+            "tri"
+        ]
+    },
+    "ank": {
+        "water_location": "952x629",
+        "control": "Turkey",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "952x629",
+        "name": "Ankara",
+        "power": 1,
+        "water_adjacent": [
+            "arm",
+            "bla",
+            "con",
+            "smy"
+        ]
+    },
+    "apu": {
+        "water_location": "575x657",
+        "control": "Italy",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "575x657",
+        "name": "Apulia",
+        "power": 0,
+        "water_adjacent": [
+            "adr",
+            "ion",
+            "nap",
+            "rom",
+            "ven"
+        ]
+    },
+    "arm": {
+        "water_location": "1080x615",
+        "control": "Turkey",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "1080x615",
+        "name": "Armenia",
+        "power": 0,
+        "water_adjacent": [
+            "ank",
+            "bla",
+            "sev",
+            "smy",
+            "syr"
+        ]
+    },
+    "bal": {
+        "water_location": "614x344",
+        "control": "",
+        "form": "WATER",
+        "water_adjacent": [
+            "ber",
+            "bot",
+            "den",
+            "lvn",
+            "pru",
+            "swe"
+        ],
+        "land_location": "614x344",
+        "name": "Baltic Sea",
+        "power": 0,
+        "water_adjacent": [
+            "ber",
+            "bot",
+            "den",
+            "lvn",
+            "pru",
+            "swe"
+        ]
+    },
+    "bar": {
+        "water_location": "762x36",
+        "control": "",
+        "form": "WATER",
+        "water_adjacent": [
+            "nor",
+            "nwg",
+            "stp"
+        ],
+        "land_location": "762x36",
+        "name": "Barents Sea",
+        "power": 0,
+        "water_adjacent": [
+            "nor",
+            "nwg",
+            "stp"
+        ]
+    },
+    "bel": {
+        "water_location": "388x393",
+        "control": "",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "388x393",
+        "name": "Belgium",
+        "power": 1,
+        "water_adjacent": [
+            "bur",
+            "eng",
+            "hol",
+            "nth",
+            "pic",
+            "ruh"
+        ]
+    },
+    "ber": {
+        "water_location": "570x370",
+        "control": "Germany",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "570x370",
+        "name": "Berlin",
+        "power": 1,
+        "water_adjacent": [
+            "bal",
+            "kie",
+            "mun",
+            "pru",
+            "sil"
+        ]
+    },
+    "bla": {
+        "water_location": "892x600",
+        "control": "",
+        "form": "WATER",
+        "water_adjacent": [
+            "aeg",
+            "ank",
+            "arm",
+            "bul",
+            "con",
+            "rum",
+            "sev"
+        ],
+        "land_location": "892x600",
+        "name": "Black Sea",
+        "power": 0,
+        "water_adjacent": [
+            "aeg",
+            "ank",
+            "arm",
+            "bul",
+            "con",
+            "rum",
+            "sev"
+        ]
+    },
+    "boh": {
+        "control": "Austria-Hungary",
+        "form": "LAND",
+        "land_adjacent": [],
+        "land_location": "596x451",
+        "name": "Bohemia",
+        "power": 0
+    },
+    "bot": {
+        "water_location": "672x274",
+        "control": "",
+        "form": "WATER",
+        "water_adjacent": [
+            "bal",
+            "fin",
+            "lvn",
+            "stp",
+            "swe"
+        ],
+        "land_location": "672x274",
+        "name": "Gulf of Bothnia",
+        "power": 0,
+        "water_adjacent": [
+            "bal",
+            "fin",
+            "lvn",
+            "stp",
+            "swe"
+        ]
+    },
+    "bre": {
+        "water_location": "264x430",
+        "control": "France",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "264x430",
+        "name": "Brest",
+        "power": 1,
+        "water_adjacent": [
+            "eng",
+            "gas",
+            "mao",
+            "par",
+            "pic"
+        ]
+    },
+    "bud": {
+        "control": "Austria-Hungary",
+        "form": "LAND",
+        "land_adjacent": [],
+        "land_location": "687x540",
+        "name": "Budapest",
+        "power": 1
+    },
+    "bul": {
+        "control": "",
+        "form": "TWO_COAST",
+        "land_adjacent": [],
+        "land_location": "787x640",
+        "name": "Bulgaria",
+        "north_adjacent": [
+            "bla",
+            "con",
+            "rum"
+        ],
+        "north_location": "831x612",
+        "power": 1,
+        "south_adjacent": [
+            "aeg",
+            "con",
+            "gre"
+        ],
+        "south_location": "787x640"
+    },
+    "bur": {
+        "control": "France",
+        "form": "LAND",
+        "land_adjacent": [],
+        "land_location": "406x471",
+        "name": "Burgundy",
+        "power": 0
+    },
+    "cly": {
+        "water_location": "323x197",
+        "control": "England",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "323x197",
+        "name": "Clyde",
+        "power": 0,
+        "water_adjacent": [
+            "edi",
+            "lvp",
+            "nao",
+            "nwg"
+        ]
+    },
+    "con": {
+        "water_location": "847x685",
+        "control": "Turkey",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "847x685",
+        "name": "Constantinople",
+        "power": 1,
+        "water_adjacent": [
+            "aeg",
+            "ank",
+            "bla",
+            "bul",
+            "smy"
+        ]
+    },
+    "den": {
+        "water_location": "531x294",
+        "control": "",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "531x294",
+        "name": "Denmark",
+        "power": 1,
+        "water_adjacent": [
+            "bal",
+            "hel",
+            "kie",
+            "nth",
+            "ska",
+            "swe"
+        ]
+    },
+    "eas": {
+        "water_location": "872x767",
+        "control": "",
+        "form": "WATER",
+        "water_adjacent": [
+            "aeg",
+            "ion",
+            "smy",
+            "syr"
+        ],
+        "land_location": "872x767",
+        "name": "Eastern Mediterranean",
+        "power": 0,
+        "water_adjacent": [
+            "aeg",
+            "ion",
+            "smy",
+            "syr"
+        ]
+    },
+    "edi": {
+        "water_location": "337x235",
+        "control": "England",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "337x235",
+        "name": "Edinburgh",
+        "power": 1,
+        "water_adjacent": [
+            "cly",
+            "lvp",
+            "nth",
+            "nwg",
+            "yor"
+        ]
+    },
+    "eng": {
+        "water_location": "288x405",
+        "control": "",
+        "form": "WATER",
+        "water_adjacent": [
+            "bel",
+            "bre",
+            "iri",
+            "lon",
+            "mao",
+            "nth",
+            "pic",
+            "wal"
+        ],
+        "land_location": "288x405",
+        "name": "English Channel",
+        "power": 0,
+        "water_adjacent": [
+            "bel",
+            "bre",
+            "iri",
+            "lon",
+            "mao",
+            "nth",
+            "pic",
+            "wal"
+        ]
+    },
+    "fin": {
+        "water_location": "731x215",
+        "control": "Russia",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "731x215",
+        "name": "Finland",
+        "power": 0,
+        "water_adjacent": [
+            "bot",
+            "nor",
+            "stp",
+            "swe"
+        ]
+    },
+    "gal": {
+        "control": "Austria-Hungary",
+        "form": "LAND",
+        "land_adjacent": [],
+        "land_location": "754x479",
+        "name": "Galicia",
+        "power": 0
+    },
+    "gas": {
+        "water_location": "279x551",
+        "control": "France",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "279x551",
+        "name": "Gascony",
+        "power": 0,
+        "water_adjacent": [
+            "bre",
+            "bur",
+            "mao",
+            "mar",
+            "par",
+            "spa"
+        ]
+    },
+    "gre": {
+        "water_location": "718x723",
+        "control": "",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "718x723",
+        "name": "Greece",
+        "power": 1,
+        "water_adjacent": [
+            "aeg",
+            "alb",
+            "bul",
+            "ion",
+            "ser"
+        ]
+    },
+    "hel": {
+        "water_location": "485x315",
+        "control": "",
+        "form": "WATER",
+        "water_adjacent": [
+            "den",
+            "hol",
+            "kie",
+            "nth"
+        ],
+        "land_location": "485x315",
+        "name": "Helgoland Bight",
+        "power": 0,
+        "water_adjacent": [
+            "den",
+            "hol",
+            "kie",
+            "nth"
+        ]
+    },
+    "hol": {
+        "water_location": "466x362",
+        "control": "",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "466x362",
+        "name": "Holland",
+        "power": 1,
+        "water_adjacent": [
+            "bel",
+            "hel",
+            "kie",
+            "nth",
+            "ruh"
+        ]
+    },
+    "ion": {
+        "water_location": "640x744",
+        "control": "",
+        "form": "WATER",
+        "water_adjacent": [
+            "adr",
+            "aeg",
+            "alb",
+            "apu",
+            "eas",
+            "gre",
+            "nap",
+            "tun",
+            "tys"
+        ],
+        "land_location": "640x744",
+        "name": "Ionian Sea",
+        "power": 0,
+        "water_adjacent": [
+            "adr",
+            "aeg",
+            "alb",
+            "apu",
+            "eas",
+            "gre",
+            "nap",
+            "tun",
+            "tys"
+        ]
+    },
+    "iri": {
+        "water_location": "248x330",
+        "control": "",
+        "form": "WATER",
+        "water_adjacent": [
+            "eng",
+            "lvp",
+            "mao",
+            "nao",
+            "wal"
+        ],
+        "land_location": "248x330",
+        "name": "Irish Sea",
+        "power": 0,
+        "water_adjacent": [
+            "eng",
+            "lvp",
+            "mao",
+            "nao",
+            "wal"
+        ]
+    },
+    "kie": {
+        "water_location": "496x366",
+        "control": "Germany",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "496x366",
+        "name": "Kiel",
+        "power": 1,
+        "water_adjacent": [
+            "ber",
+            "den",
+            "hel",
+            "hol",
+            "mun",
+            "ruh"
+        ]
+    },
+    "lon": {
+        "water_location": "374x330",
+        "control": "England",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "374x330",
+        "name": "London",
+        "power": 1,
+        "water_adjacent": [
+            "eng",
+            "nth",
+            "wal",
+            "yor"
+        ]
+    },
+    "lvn": {
+        "water_location": "740x320",
+        "control": "Russia",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "740x320",
+        "name": "Livonia",
+        "power": 0,
+        "water_adjacent": [
+            "bal",
+            "bot",
+            "mos",
+            "pru",
+            "stp",
+            "war"
+        ]
+    },
+    "lvp": {
+        "water_location": "324x255",
+        "control": "England",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "324x255",
+        "name": "Liverpool",
+        "power": 1,
+        "water_adjacent": [
+            "cly",
+            "edi",
+            "iri",
+            "nao",
+            "wal",
+            "yor"
+        ]
+    },
+    "lyo": {
+        "water_location": "342x627",
+        "control": "",
+        "form": "WATER",
+        "water_adjacent": [
+            "mar",
+            "pie",
+            "spa",
+            "tus",
+            "tys",
+            "wes"
+        ],
+        "land_location": "342x627",
+        "name": "Gulf of Lyon",
+        "power": 0,
+        "water_adjacent": [
+            "mar",
+            "pie",
+            "spa",
+            "tus",
+            "tys",
+            "wes"
+        ]
+    },
+    "mao": {
+        "water_location": "166x492",
+        "control": "",
+        "form": "WATER",
+        "water_adjacent": [
+            "bre",
+            "eng",
+            "gas",
+            "iri",
+            "naf",
+            "nao",
+            "por",
+            "spa",
+            "wes"
+        ],
+        "land_location": "166x492",
+        "name": "Mid-Atlantic Ocean",
+        "power": 0,
+        "water_adjacent": [
+            "bre",
+            "eng",
+            "gas",
+            "iri",
+            "naf",
+            "nao",
+            "por",
+            "spa",
+            "wes"
+        ]
+    },
+    "mar": {
+        "water_location": "325x575",
+        "control": "France",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "325x575",
+        "name": "Marseilles",
+        "power": 1,
+        "water_adjacent": [
+            "bur",
+            "gas",
+            "lyo",
+            "pie",
+            "spa"
+        ]
+    },
+    "mos": {
+        "control": "Russia",
+        "form": "LAND",
+        "land_adjacent": [],
+        "land_location": "861x344",
+        "name": "Moscow",
+        "power": 1
+    },
+    "mun": {
+        "control": "Germany",
+        "form": "LAND",
+        "land_adjacent": [],
+        "land_location": "498x442",
+        "name": "Munich",
+        "power": 1
+    },
+    "naf": {
+        "water_location": "292x764",
+        "control": "",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "292x764",
+        "name": "North Africa",
+        "power": 0,
+        "water_adjacent": [
+            "mao",
+            "tun",
+            "wes"
+        ]
+    },
+    "nao": {
+        "water_location": "168x204",
+        "control": "",
+        "form": "WATER",
+        "water_adjacent": [
+            "cly",
+            "iri",
+            "lvp",
+            "mao",
+            "nwg"
+        ],
+        "land_location": "168x204",
+        "name": "North Atlantic Ocean",
+        "power": 0,
+        "water_adjacent": [
+            "cly",
+            "iri",
+            "lvp",
+            "mao",
+            "nwg"
+        ]
+    },
+    "nap": {
+        "water_location": "576x698",
+        "control": "Italy",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "576x698",
+        "name": "Naples",
+        "power": 1,
+        "water_adjacent": [
+            "apu",
+            "ion",
+            "rom",
+            "tys"
+        ]
+    },
+    "nor": {
+        "water_location": "514x207",
+        "control": "",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "514x207",
+        "name": "Norway",
+        "power": 1,
+        "water_adjacent": [
+            "bar",
+            "fin",
+            "nth",
+            "nwg",
+            "ska",
+            "stp",
+            "swe"
+        ]
+    },
+    "nth": {
+        "water_location": "427x290",
+        "control": "",
+        "form": "WATER",
+        "water_adjacent": [
+            "bel",
+            "den",
+            "edi",
+            "eng",
+            "hel",
+            "hol",
+            "lon",
+            "nor",
+            "nwg",
+            "ska",
+            "yor"
+        ],
+        "land_location": "427x290",
+        "name": "North Sea",
+        "power": 0,
+        "water_adjacent": [
+            "bel",
+            "den",
+            "edi",
+            "eng",
+            "hel",
+            "hol",
+            "lon",
+            "nor",
+            "nwg",
+            "ska",
+            "yor"
+        ]
+    },
+    "nwg": {
+        "water_location": "459x107",
+        "control": "",
+        "form": "WATER",
+        "water_adjacent": [
+            "bar",
+            "cly",
+            "edi",
+            "nao",
+            "nor",
+            "nth"
+        ],
+        "land_location": "459x107",
+        "name": "Norwegian Sea",
+        "power": 0,
+        "water_adjacent": [
+            "bar",
+            "cly",
+            "edi",
+            "nao",
+            "nor",
+            "nth"
+        ]
+    },
+    "par": {
+        "control": "France",
+        "form": "LAND",
+        "land_adjacent": [],
+        "land_location": "342x483",
+        "name": "Paris",
+        "power": 1
+    },
+    "pic": {
+        "water_location": "354x424",
+        "control": "France",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "354x424",
+        "name": "Picardy",
+        "power": 0,
+        "water_adjacent": [
+            "bel",
+            "bre",
+            "bur",
+            "eng",
+            "par"
+        ]
+    },
+    "pie": {
+        "water_location": "451x566",
+        "control": "Italy",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "451x566",
+        "name": "Piedmont",
+        "power": 0,
+        "water_adjacent": [
+            "lyo",
+            "mar",
+            "tus",
+            "tyr",
+            "ven"
+        ]
+    },
+    "por": {
+        "water_location": "112x605",
+        "control": "",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "112x605",
+        "name": "Portugal",
+        "power": 1,
+        "water_adjacent": [
+            "mao",
+            "spa"
+        ]
+    },
+    "pru": {
+        "water_location": "632x397",
+        "control": "Germany",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "632x397",
+        "name": "Prussia",
+        "power": 0,
+        "water_adjacent": [
+            "bal",
+            "ber",
+            "lvn",
+            "sil",
+            "war"
+        ]
+    },
+    "rom": {
+        "water_location": "535x649",
+        "control": "Italy",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "535x649",
+        "name": "Rome",
+        "power": 1,
+        "water_adjacent": [
+            "apu",
+            "nap",
+            "tus",
+            "tys",
+            "ven"
+        ]
+    },
+    "ruh": {
+        "control": "Germany",
+        "form": "LAND",
+        "land_adjacent": [],
+        "land_location": "446x437",
+        "name": "Ruhr",
+        "power": 0
+    },
+    "rum": {
+        "water_location": "832x552",
+        "control": "",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "832x552",
+        "name": "Rumania",
+        "power": 1,
+        "water_adjacent": [
+            "bla",
+            "bud",
+            "bul",
+            "gal",
+            "ser",
+            "sev",
+            "ukr"
+        ]
+    },
+    "ser": {
+        "control": "",
+        "form": "LAND",
+        "land_adjacent": [],
+        "land_location": "689x618",
+        "name": "Serbia",
+        "power": 1
+    },
+    "sev": {
+        "water_location": "937x502",
+        "control": "Russia",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "937x502",
+        "name": "Sevastopol",
+        "power": 1,
+        "water_adjacent": [
+            "arm",
+            "bla",
+            "mos",
+            "rum",
+            "ukr"
+        ]
+    },
+    "sil": {
+        "control": "Germany",
+        "form": "LAND",
+        "land_adjacent": [],
+        "land_location": "630x439",
+        "name": "Silesia",
+        "power": 0
+    },
+    "ska": {
+        "water_location": "558x280",
+        "control": "",
+        "form": "WATER",
+        "water_adjacent": [
+            "den",
+            "nor",
+            "nth",
+            "swe"
+        ],
+        "land_location": "558x280",
+        "name": "Skagerrak",
+        "power": 0,
+        "water_adjacent": [
+            "den",
+            "nor",
+            "nth",
+            "swe"
+        ]
+    },
+    "smy": {
+        "water_location": "865x727",
+        "control": "Turkey",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "865x727",
+        "name": "Smyrna",
+        "power": 1,
+        "water_adjacent": [
+            "aeg",
+            "ank",
+            "arm",
+            "con",
+            "eas",
+            "syr"
+        ]
+    },
+    "spa": {
+        "control": "",
+        "form": "TWO_COAST",
+        "land_adjacent": [],
+        "land_location": "211x604",
+        "name": "Spain",
+        "north_adjacent": [
+            "gas",
+            "mao",
+            "por"
+        ],
+        "north_location": "165x548",
+        "power": 1,
+        "south_adjacent": [
+            "lyo",
+            "mao",
+            "mar",
+            "por",
+            "wes"
+        ],
+        "south_location": "218x677"
+    },
+    "stp": {
+        "control": "Russia",
+        "form": "TWO_COAST",
+        "land_adjacent": [],
+        "land_location": "846x220",
+        "name": "St Petersburg",
+        "north_adjacent": [
+            "bar",
+            "nor"
+        ],
+        "north_location": "854x168",
+        "power": 1,
+        "south_adjacent": [
+            "bot",
+            "fin",
+            "lvn"
+        ],
+        "south_location": "795x262"
+    },
+    "swe": {
+        "water_location": "618x232",
+        "control": "",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "618x232",
+        "name": "Sweden",
+        "power": 1,
+        "water_adjacent": [
+            "bal",
+            "bot",
+            "den",
+            "fin",
+            "nor",
+            "ska"
+        ]
+    },
+    "syr": {
+        "water_location": "1047x725",
+        "control": "Turkey",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "1047x725",
+        "name": "Syria",
+        "power": 0,
+        "water_adjacent": [
+            "arm",
+            "eas",
+            "smy"
+        ]
+    },
+    "tri": {
+        "water_location": "585x558",
+        "control": "Austria-Hungary",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "585x558",
+        "name": "Trieste",
+        "power": 1,
+        "water_adjacent": [
+            "adr",
+            "alb",
+            "bud",
+            "ser",
+            "tyr",
+            "ven",
+            "vie"
+        ]
+    },
+    "tun": {
+        "water_location": "401x756",
+        "control": "",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "401x756",
+        "name": "Tunis",
+        "power": 1,
+        "water_adjacent": [
+            "ion",
+            "naf",
+            "tys",
+            "wes"
+        ]
+    },
+    "tus": {
+        "water_location": "507x621",
+        "control": "Italy",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "507x621",
+        "name": "Tuscany",
+        "power": 0,
+        "water_adjacent": [
+            "lyo",
+            "pie",
+            "rom",
+            "tys",
+            "ven"
+        ]
+    },
+    "tyr": {
+        "control": "Austria-Hungary",
+        "form": "LAND",
+        "land_adjacent": [],
+        "land_location": "515x526",
+        "name": "Tyrolia",
+        "power": 0
+    },
+    "tys": {
+        "water_location": "489x682",
+        "control": "",
+        "form": "WATER",
+        "water_adjacent": [
+            "ion",
+            "lyo",
+            "nap",
+            "rom",
+            "tun",
+            "tus",
+            "wes"
+        ],
+        "land_location": "489x682",
+        "name": "Tyrrhenian Sea",
+        "power": 0,
+        "water_adjacent": [
+            "ion",
+            "lyo",
+            "nap",
+            "rom",
+            "tun",
+            "tus",
+            "wes"
+        ]
+    },
+    "ukr": {
+        "control": "Russia",
+        "form": "LAND",
+        "land_adjacent": [],
+        "land_location": "829x456",
+        "name": "Ukraine",
+        "power": 0
+    },
+    "ven": {
+        "water_location": "517x582",
+        "control": "Italy",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "517x582",
+        "name": "Venice",
+        "power": 1,
+        "water_adjacent": [
+            "adr",
+            "apu",
+            "pie",
+            "rom",
+            "tri",
+            "tus",
+            "tyr"
+        ]
+    },
+    "vie": {
+        "control": "Austria-Hungary",
+        "form": "LAND",
+        "land_adjacent": [],
+        "land_location": "600x497",
+        "name": "Vienna",
+        "power": 1
+    },
+    "wal": {
+        "water_location": "309x357",
+        "control": "England",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "309x357",
+        "name": "Wales",
+        "power": 0,
+        "water_adjacent": [
+            "eng",
+            "iri",
+            "lon",
+            "lvp",
+            "yor"
+        ]
+    },
+    "war": {
+        "control": "Russia",
+        "form": "LAND",
+        "land_adjacent": [],
+        "land_location": "687x431",
+        "name": "Warsaw",
+        "power": 1
+    },
+    "wes": {
+        "water_location": "335x692",
+        "control": "",
+        "form": "WATER",
+        "water_adjacent": [
+            "lyo",
+            "mao",
+            "naf",
+            "spa",
+            "tun",
+            "tys"
+        ],
+        "land_location": "335x692",
+        "name": "Western Mediterranean",
+        "power": 0,
+        "water_adjacent": [
+            "lyo",
+            "mao",
+            "naf",
+            "spa",
+            "tun",
+            "tys"
+        ]
+    },
+    "yor": {
+        "water_location": "351x322",
+        "control": "England",
+        "form": "COAST",
+        "land_adjacent": [],
+        "land_location": "351x322",
+        "name": "Yorkshire",
+        "power": 0,
+        "water_adjacent": [
+            "edi",
+            "lon",
+            "lvp",
+            "nth",
+            "wal"
+        ]
+    }
+}
