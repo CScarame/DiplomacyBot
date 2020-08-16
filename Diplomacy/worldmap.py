@@ -4,7 +4,7 @@
 # 
 #############
 
-import json
+import json, time
 from typing import List, Dict
 from PIL import Image
 
@@ -13,6 +13,8 @@ from Diplomacy.province import ProvinceBase, LandProvince, WaterProvince, CoastP
 from Diplomacy.country import Country
 from Diplomacy.unit import Unit
 from Diplomacy.turn import Turn
+
+BACKGROUND_IMAGE = "Images/Main.png"
 
 class WorldMap:
     """The Diplomacy map, sufficiently detailed.
@@ -34,8 +36,7 @@ class WorldMap:
         self.Countries = dict()
         self.Units = list()
         self.turn = Turn(1900, 'Spring')
-
-        self.background = None
+        self.setBackground(BACKGROUND_IMAGE,"eeeeee")
 
     def makeProvinces(self, P):
         for abr in P:
@@ -114,16 +115,21 @@ class WorldMap:
                 bg.paste(prov.power_image,(0,0),prov.power_image)
         for unit in self.Units:
             if unit.typ == UnitType.ARMY:
-                bg.paste(unit.image,unit.province.land_location,unit.image)
+                bg.paste(unit.image,unit.province.land_location.data(),unit.image)
             elif unit.typ == UnitType.FLEET:
                 if unit.coast == None:
-                    bg.paste(unit.image,unit.province.water_location,unit.image)
+                    bg.paste(unit.image,unit.province.water_location.data(),unit.image)
                 elif unit.coast == Coast.NORTH:
-                    bg.paste(unit.image,unit.province.north_location,unit.image)
+                    bg.paste(unit.image,unit.province.north_location.data(),unit.image)
                 elif unit.coast == Coast.SOUTH:
-                    bg.paste(unit.image, unit.province.south_location,unit.image)
+                    bg.paste(unit.image, unit.province.south_location.data(),unit.image)
         return bg
-            
+
+    def saveImage(self):
+        filename = "Images/Temp/" + time.strftime("%Y%m%d-%H%M%S") + ".png"
+        self.makeImage().save(filename, "PNG")
+        return filename
+
     def print_names(self):
         for prov in self.Provinces:
             print("{p.abr:3}{p.name:>25}".format(p=self.Provinces[prov]))

@@ -37,7 +37,8 @@ class Location():
         loc = str_in.split('x')
         self.x = int(loc[0])
         self.y = int(loc[1])
-    
+    def data(self):
+        return (self.x,self.y)
     def print(self):
         loc_string = '{p.x}x{p.y}'.format(p=self)
         return loc_string
@@ -65,10 +66,7 @@ class Color():
     def data(self):
         return (self.r,self.g,self.b)
     def print(self):
-        r = hex(self.r[2:])
-        g = hex(self.g[2:])
-        b = hex(self.b[2:])
-        return r+g+b
+        return "{0:x}{1:x}{2:x}".format(self.r,self.g,self.b)
 
 
 #Location = NewType('Location', (int,int)) #x,y coordinate location on map
