@@ -40,3 +40,8 @@ class Diplomacy_Game(commands.Cog):
             elif arg in self.Game.Countries:
                 msg = msg + '`' + self.Game.Countries[arg].info() + '`' + "\n" 
         await ctx.send(msg)
+
+    @commands.command(help="Generate a map of the current world")
+    async def map(self, ctx):
+        mapfile = discord.File(self.Game.saveImage())
+        await ctx.send(file=mapfile)

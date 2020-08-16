@@ -52,7 +52,7 @@ class ProvinceBase:
             return
         data = numpy.array(self.image)
         if self.control == None:
-            data[..., :-1] = noneColor
+            data[..., :-1] = noneColor.data()
         else:
             data[..., :-1] = self.control.color.data()
         self.image = Image.fromarray(data)
@@ -63,7 +63,7 @@ class ProvinceBase:
             return
         data = numpy.array(self.power_image)
         if self.power == None:
-            data[..., :-1] = noneColor
+            data[..., :-1] = noneColor.data()
         else:
             data[..., :-1] = self.power.color.data()
         self.power_image = Image.fromarray(data)
