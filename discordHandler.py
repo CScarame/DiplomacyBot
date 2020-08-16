@@ -11,7 +11,7 @@
 #
 #
 ###################
-
+#%%
 import discord
 from discord.ext import commands
 
@@ -49,3 +49,8 @@ class discordHandler:
 if __name__ == "__main__":
     D = discordHandler("config.json","Cogs")
     D.run()
+
+
+
+
+# %%
