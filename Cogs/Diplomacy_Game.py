@@ -13,6 +13,8 @@ from discord.ext import commands
 import json
 from Diplomacy.worldmap import WorldMap
 
+import difflib, string
+
 def setup(bot):
     bot.add_cog(Diplomacy_Game(bot))
 
@@ -29,16 +31,19 @@ class Diplomacy_Game(commands.Cog):
         self.bot = bot
 
     @commands.command(help="Get information about a province or country")
-    async def info(self,ctx, *args):
-        if not args:
-            msg = "Use this command for more information about a certain province or country.  For a list of provinces and countries, use **!all**"
-            await ctx.send(msg)
-        msg = ""
-        for arg in args:
-            if arg.lower() in self.Game.Provinces:
-                msg = msg + '`' + self.Game.Provinces[arg.lower()].info() + '`' + "\n"
-            elif arg in self.Game.Countries:
-                msg = msg + '`' + self.Game.Countries[arg].info() + '`' + "\n" 
+    async def info(self,ctx, *, info_name):
+        if info_name.lower() in self.Game.Provinces:
+            msg = '`' + self.Game.Provinces[info_name.lower()].info() + '`' + "\n"
+        elif info_name in self.Game.Countries:
+            msg = '`' + self.Game.Countries[info_name].info() + '`' + "\n"
+        else:
+            library = list(self.Game.Provinces.keys()) + list(self.Game.Countries.keys())
+            possible_matches = difflib.get_close_matches(info_name,library)
+            if not possible_matches:
+                msg = ("Not sure what you're asking about.")
+            else:
+                msg = "Did you mean:\n"
+                msg = msg + "\n".join(possible_matches)
         await ctx.send(msg)
 
     @commands.command(help="Generate a map of the current world")
