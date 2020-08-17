@@ -11,6 +11,7 @@ from Diplomacy.unit import Unit
 
 class Order():
     unit:Unit
+    msg:str
     def __init__(self, unit):
         self.unit = unit
     
@@ -18,6 +19,16 @@ class Order():
 class Hold(Order):
     def __init__(self, unit):
         super().__init__(unit)
+        self.set_msg()
+    def set_msg(self):
+        self.msg = ""
+        if self.unit.typ == UnitType.ARMY:
+            self.msg = self.msg + "A "
+        elif self.unit.typ == UnitType.FLEET:
+            self.msg = self.msg + "F "
+        self.msg = self.msg + self.unit.province.abr.capitalize()
+        self.msg = self.msg + " holds"
+        return
 
 class Move(Order):
     province:ProvinceBase

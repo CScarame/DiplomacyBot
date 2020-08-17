@@ -11,7 +11,7 @@ import discord
 from discord.ext import commands
 
 import json
-from Diplomacy.worldmap import WorldMap
+from Diplomacy.game import Game
 
 import difflib, string
 
@@ -20,24 +20,20 @@ def setup(bot):
 
 class Diplomacy_Game(commands.Cog):
     def __init__(self,bot):
-        with open("Saves/provinces.json",'r') as prov_file:
-            P = json.load(prov_file)
-        with open("Saves/countries.json",'r') as coun_file:
-            GS = json.load(coun_file)
-        W = WorldMap()
-        W.deserialize(P,GS)
-
-        self.Game = W
+        G = Game("Saves/provinces.json","Saves/countries.json")
+        self.Game = G
         self.bot = bot
 
     @commands.command(help="Get information about a province or country")
     async def info(self,ctx, *, info_name):
-        if info_name.lower() in self.Game.Provinces:
-            msg = '`' + self.Game.Provinces[info_name.lower()].info() + '`' + "\n"
-        elif info_name in self.Game.Countries:
-            msg = '`' + self.Game.Countries[info_name].info() + '`' + "\n"
+        Provinces = self.Game.World.Provinces
+        Countries = self.Game.World.Countries
+        if info_name.lower() in Provinces:
+            msg = '`' + Provinces[info_name.lower()].info() + '`' + "\n"
+        elif info_name in Countries:
+            msg = '`' + Countries[info_name].info() + '`' + "\n"
         else:
-            library = list(self.Game.Provinces.keys()) + list(self.Game.Countries.keys())
+            library = list(Provinces.keys()) + list(Countries.keys())
             possible_matches = difflib.get_close_matches(info_name,library)
             if not possible_matches:
                 msg = ("Not sure what you're asking about.")
@@ -48,5 +44,14 @@ class Diplomacy_Game(commands.Cog):
 
     @commands.command(help="Generate a map of the current world")
     async def map(self, ctx):
-        mapfile = discord.File(self.Game.saveImage())
+        mapfile = discord.File(self.Game.World.saveImage())
         await ctx.send(file=mapfile)
+    @commands.command(help="Show current orders")
+    async def orders(self,ctx):
+        msg = "`"
+        Countries = self.Game.World.Countries
+        for coun in Countries:
+            msg = msg + Countries[coun].name + "\n"
+            msg = msg + self.Game.readOrders(coun) + "\n"
+        msg = msg + "`"
+        await ctx.send(msg)
