@@ -14,6 +14,13 @@ class Order():
     msg:str
     def __init__(self, unit):
         self.unit = unit
+    def msgBase(self):
+        if self.unit.typ == UnitType.ARMY:
+            return "A " + self.unit.province.abr.capitalize()
+        elif self.unit.typ == UnitType.FLEET:
+            return "F " + self.unit.province.abr.capitalize()
+        else:
+            return " "
     
 
 class Hold(Order):
@@ -21,13 +28,7 @@ class Hold(Order):
         super().__init__(unit)
         self.set_msg()
     def set_msg(self):
-        self.msg = ""
-        if self.unit.typ == UnitType.ARMY:
-            self.msg = self.msg + "A "
-        elif self.unit.typ == UnitType.FLEET:
-            self.msg = self.msg + "F "
-        self.msg = self.msg + self.unit.province.abr.capitalize()
-        self.msg = self.msg + " holds"
+        self.msg = self.msgBase()+ " holds"
         return
 
 class Move(Order):
@@ -38,6 +39,12 @@ class Move(Order):
         else:
             self.unit = unit
             self.province = prov
+        self.set_msg()
+
+    def set_msg(self):
+        self.msg = self.msgBase() + "-" + self.province.abr.capitalize()
+        return
+
     
 class Support(Order):
     target:ProvinceBase
@@ -45,3 +52,11 @@ class Support(Order):
     def __init__(self, unit:Unit, target:ProvinceBase, supported:ProvinceBase):
         if not self.unit.province.is_adjacent(target,unit):
             raise DiplomacyError()
+        else:
+            self.unit = unit
+            self.target = target
+            self.supported = supported
+        self.set_msg()
+    def set_msg(self):
+        self.msg = self.msgBase() + " S " + self.supported.abr.capitalize() + self.target.abr.capitalize()
+        return
