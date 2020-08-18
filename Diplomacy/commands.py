@@ -34,11 +34,8 @@ class Hold(Order):
 class Move(Order):
     province:ProvinceBase
     def __init__(self, unit:Unit, prov:ProvinceBase):
-        if not self.unit.province.is_adjacent(prov,unit):
-            raise DiplomacyError()
-        else:
-            self.unit = unit
-            self.province = prov
+        super().__init__(unit)
+        self.province = prov
         self.set_msg()
 
     def set_msg(self):
@@ -50,12 +47,9 @@ class Support(Order):
     target:ProvinceBase
     supported:ProvinceBase
     def __init__(self, unit:Unit, target:ProvinceBase, supported:ProvinceBase):
-        if not self.unit.province.is_adjacent(target,unit):
-            raise DiplomacyError()
-        else:
-            self.unit = unit
-            self.target = target
-            self.supported = supported
+        super().__init__(unit)
+        self.target = target
+        self.supported = supported
         self.set_msg()
     def set_msg(self):
         self.msg = self.msgBase() + " S " + self.supported.abr.capitalize() + self.target.abr.capitalize()
