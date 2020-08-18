@@ -53,9 +53,9 @@ class Move(Order):
         if not unit.province.is_adjacent(prov,unit):
             if typ == UnitType.FLEET:
                 raise DiplomacyError()
-            if not (isinstance(unit.province, CoastProvince) or ininstance(unit.province, TwoCoastProvince)): 
+            if not (isinstance(unit.province, CoastProvince) or isinstance(unit.province, TwoCoastProvince)): 
                 raise DiplomacyError()
-            if not (isinstance(prov, CoastProvince) or ininstance(prov, TwoCoastProvince)): # Can be convoyed
+            if not (isinstance(prov, CoastProvince) or isinstance(prov, TwoCoastProvince)): # Can be convoyed
                 raise DiplomacyError()
         return
 
@@ -75,7 +75,7 @@ class Support(Order):
         self.validate()
         self.set_msg()
 
-    def valiadate(self):
+    def validate(self):
         # Support Order requirements:
             #   -Since it cannot be convoyed, the only requirement for support is that the target be adjacent 
             #   -Wait also create a temporary Move order to see if it is valid? Check to see if there is a unit in that province?
