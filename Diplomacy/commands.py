@@ -33,10 +33,31 @@ class Hold(Order):
 
 class Move(Order):
     province:ProvinceBase
+    
     def __init__(self, unit:Unit, prov:ProvinceBase):
         super().__init__(unit)
         self.province = prov
+        self.validate()
         self.set_msg()
+
+    def validate(self):
+    # Move Order requirements:
+        #   -provinces are adjacent OR
+        #   -both provinces are Coastal and can be connected by water
+        #   -unit type must correspond with the destination(armies can't move to water, fleets can't move to land)
+        #    note line above is already checked by is_adjacent I think
+        # note: black sea is only water province that is not connected to all other water provinces
+        typ = self.unit.typ
+        unit = self.unit
+        prov = self.province
+        if not unit.province.is_adjacent(prov,unit):
+            if typ == UnitType.FLEET:
+                raise DiplomacyError()
+            if not (isinstance(unit.province, CoastProvince) or ininstance(unit.province, TwoCoastProvince)): 
+                raise DiplomacyError()
+            if not (isinstance(prov, CoastProvince) or ininstance(prov, TwoCoastProvince)): # Can be convoyed
+                raise DiplomacyError()
+        return
 
     def set_msg(self):
         self.msg = self.msgBase() + "-" + self.province.abr.capitalize()
@@ -46,11 +67,22 @@ class Move(Order):
 class Support(Order):
     target:ProvinceBase
     supported:ProvinceBase
+    
     def __init__(self, unit:Unit, target:ProvinceBase, supported:ProvinceBase):
         super().__init__(unit)
         self.target = target
         self.supported = supported
+        self.validate()
         self.set_msg()
+
+    def valiadate(self):
+        # Support Order requirements:
+            #   -Since it cannot be convoyed, the only requirement for support is that the target be adjacent 
+            #   -Wait also create a temporary Move order to see if it is valid? Check to see if there is a unit in that province?
+        if not self.unit.province.is_adjacent(self.target,self.unit):
+            raise DiplomacyError()
+        
+    
     def set_msg(self):
         self.msg = self.msgBase() + " S " + self.supported.abr.capitalize() + "-" + self.target.abr.capitalize()
         return
@@ -62,7 +94,20 @@ class Convoy(Order):
         super().__init__(unit)
         self.start = c_start
         self.end = c_end
+        self.validate()
         self.set_msg()
+
+    def validate(self):
+        # Convoy Order Requirements:
+            # Only fleets can convoy
+            # Start and end must be coastal
+            # TODO: Black sea separated from others
+        if not self.unit.typ == UnitType.FLEET:
+            raise DiplomacyError()
+        if not (isinstance(self.start, CoastProvince) or isinstance(self.start, TwoCoastProvince)):
+            raise DiplomacyError()
+        if not (isinstance(self.end, CoastProvince) or isinstance(self.end, TwoCoastProvince)):
+            raise DiplomacyError()
 
     def set_msg(self):
         self.msg = self.msgBase() + " C " + self.start.abr.capitalize() + "-" + self.end.abr.capitalize()
