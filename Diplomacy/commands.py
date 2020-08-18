@@ -52,5 +52,17 @@ class Support(Order):
         self.supported = supported
         self.set_msg()
     def set_msg(self):
-        self.msg = self.msgBase() + " S " + self.supported.abr.capitalize() + self.target.abr.capitalize()
+        self.msg = self.msgBase() + " S " + self.supported.abr.capitalize() + "-" + self.target.abr.capitalize()
         return
+
+class Convoy(Order):
+    start:ProvinceBase
+    end:ProvinceBase
+    def __init__(self, unit:Unit, c_start:ProvinceBase, c_end:ProvinceBase):
+        super().__init__(unit)
+        self.start = c_start
+        self.end = c_end
+        self.set_msg()
+
+    def set_msg(self):
+        self.msg = self.msgBase() + " C " + self.start.abr.capitalize() + "-" + self.end.abr.capitalize()
