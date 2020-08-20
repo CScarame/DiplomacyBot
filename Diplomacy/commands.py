@@ -24,6 +24,8 @@ class Order():
 
     def validate(self):
         NotImplementedError()
+    def get_msg(self):
+        return self.msg
     
 
 class Hold(Order):

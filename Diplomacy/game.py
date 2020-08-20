@@ -75,12 +75,12 @@ class Game:
         parts = dash_str.split("-")
         first:ProvinceBase
         second:ProvinceBase
-        if parts[0].lowercase() in self.World.Provinces.keys():
-            first = self.World.Provinces[parts[0].lowercase()]
+        if parts[0].lower() in self.World.Provinces.keys():
+            first = self.World.Provinces[parts[0].lower()]
         else:
             return None
-        if parts[1].lowercase() in self.World.Provinces.keys():
-            second = self.World.Provinces[parts[1].lowercase()]
+        if parts[1].lower() in self.World.Provinces.keys():
+            second = self.World.Provinces[parts[1].lower()]
         else: return None
         return (first,second)
 
@@ -98,59 +98,59 @@ class Game:
 
         # Make sure there are enough words
         if len(parts) < 2:
-            ParseOrderError()
+            raise ParseOrderError
 
         # Determine UnitType
-        if parts[0].uppercase() == "A":
+        if parts[0].upper() == "A":
             typ = UnitType.ARMY
-        elif parts[0].uppercase() == "F":
+        elif parts[0].upper() == "F":
             typ = UnitType.FLEET
         else:
-            ParseOrderError()
+            raise ParseOrderError
         
         # Check for Move Order
         if "-" in parts[1]:
             move_provs = self.splitDashString(parts[1])
             if move_provs == None:
-                ParseOrderError()
+                raise ParseOrderError
             unit = self.matchUnit(coun, typ, move_provs[0])
             if unit == None:
-                ParseOrderError()
+                raise ParseOrderError
             return Move(unit,move_provs[1])
         # Determine unit
-        elif parts[1].lowercase() in self.World.Provinces.keys():
-            current_province = self.World.Provinces[parts[1].lowercase()] # Pull current prov out
+        elif parts[1].lower() in self.World.Provinces.keys():
+            current_province = self.World.Provinces[parts[1].lower()] # Pull current prov out
             unit = self.matchUnit(coun,typ,current_province)
             if unit == None:
-                ParseOrderError()
+                raise ParseOrderError
         else:
-            ParseOrderError()
+            raise ParseOrderError
         
         # Check for Hold Order
-        if parts[2].lowercase() == "holds" or parts[2].lowercase() == "hold":
+        if parts[2].lower() == "holds" or parts[2].lower() == "hold":
             return Hold(unit)
-        elif parts[2].lowercase() == "s":
+        elif parts[2].lower() == "s":
             ## SUPPORT COMMAND
             if "-" in parts[3]:
                 move_provs = self.splitDashString(parts[3])
                 if move_provs == None:
-                    ParseOrderError()
+                    raise ParseOrderError
                 return SupportMove(unit,move_provs[0],move_provs[1])
-            elif parts[3].lowercase() in self.World.Provinces.keys():
-                return SupportHold(unit,self.World.Provinces[parts[3].lowercase()])
+            elif parts[3].lower() in self.World.Provinces.keys():
+                return SupportHold(unit,self.World.Provinces[parts[3].lower()])
             else:
-                ParseOrderError()
-        elif parts[2].lowercase() == "c":
+                raise ParseOrderError
+        elif parts[2].lower() == "c":
             ##CONVOY COMMAND
             if "-" in parts[3]:
                 move_provs = self.splitDashString(parts[3])
                 if move_provs == None:
-                    ParseOrderError()
+                    raise ParseOrderError
                 return Convoy(unit,move_provs[0],move_provs[1])
             else:
-                ParseOrderError()
+                raise ParseOrderError
         else:
-            ParseOrderError()
+            raise ParseOrderError
         return
 
             

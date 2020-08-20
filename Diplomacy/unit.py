@@ -72,8 +72,8 @@ class Unit:
                     return self.province.south_adjacent
         return list()
 
-    def match(self, coun:Country, typ:UnitType, prov:str):
-        if coun == self.country and typ == self.typ and prov == self.province.abr:
+    def match(self, coun:Country, typ:UnitType, prov:ProvinceBase):
+        if coun.name == self.country.name and typ == self.typ and prov.abr == self.province.abr:
             return True
         else:
             return False
