@@ -80,8 +80,7 @@ class Support(Order):
         NotImplementedError()
 
     def support_msg(self):
-        self.msg = self.msgBase() + " S " + self.supported.abr.capitalize()
-        return
+        return self.msgBase() + " S " + self.supported.abr.capitalize()
 
 class SupportHold(Support):
     def __init__(self, unit:Unit, supported:ProvinceBase):
@@ -108,7 +107,8 @@ class SupportMove(Support):
         if not self.unit.province.is_adjacent(self.target, self.unit):
             raise DiplomacyError()
     def set_msg(self):
-        self.msg = self.support_msg() + "-" _ self.target.abr.capitalize()
+        self.msg = self.support_msg() + "-" + self.target.abr.capitalize()
+        return
 
 class Convoy(Order):
     start:ProvinceBase
