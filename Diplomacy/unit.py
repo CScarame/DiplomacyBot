@@ -71,6 +71,13 @@ class Unit:
                 elif self.coast == Coast.SOUTH:
                     return self.province.south_adjacent
         return list()
+
+    def match(self, coun:Country, typ:UnitType, prov:str):
+        if coun == self.country and typ == self.typ and prov == self.province.abr:
+            return True
+        else:
+            return False
+
     def print(self):
         if self.typ == UnitType.ARMY:
             typ_str = "Army"

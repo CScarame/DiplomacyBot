@@ -55,3 +55,8 @@ class Diplomacy_Game(commands.Cog):
             msg = msg + self.Game.readOrders(coun) + "\n"
         msg = msg + "`"
         await ctx.send(msg)
+
+    @commands.command(help="Dev Order write Always England")
+    async def o(self,ctx,*,order_str):
+        order = self.Game.parseOrder(order_str)
+        await order.msg

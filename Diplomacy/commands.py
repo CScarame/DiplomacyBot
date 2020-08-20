@@ -4,7 +4,7 @@
 # Set of possible commands that can be sent.
 #############
 
-from Diplomacy.types import UnitType, DiplomacyError
+from Diplomacy.types import UnitType, OrderValidationError
 from Diplomacy.province import ProvinceBase, LandProvince, WaterProvince, CoastProvince, TwoCoastProvince
 from Diplomacy.unit import Unit
 
@@ -55,11 +55,11 @@ class Move(Order):
         prov = self.province
         if not unit.province.is_adjacent(prov,unit):
             if typ == UnitType.FLEET:
-                raise DiplomacyError()
+                raise OrderValidationError()
             if not (isinstance(unit.province, CoastProvince) or isinstance(unit.province, TwoCoastProvince)): 
-                raise DiplomacyError()
+                raise OrderValidationError()
             if not (isinstance(prov, CoastProvince) or isinstance(prov, TwoCoastProvince)): # Can be convoyed
-                raise DiplomacyError()
+                raise OrderValidationError()
         return
 
     def set_msg(self):
@@ -91,7 +91,7 @@ class SupportHold(Support):
     def validate(self):
         # Support Hold must be adjacent to supported unit
         if not self.unit.province.is_adjacent(self.supported,self.unit):
-            raise DiplomacyError()
+            raise OrderValidationError()
 
     def set_msg(self):
         self.msg = self.support_msg()
@@ -105,7 +105,7 @@ class SupportMove(Support):
     def validate(self):
         #Support Move must be adjacent to target province
         if not self.unit.province.is_adjacent(self.target, self.unit):
-            raise DiplomacyError()
+            raise OrderValidationError()
     def set_msg(self):
         self.msg = self.support_msg() + "-" + self.target.abr.capitalize()
         return
@@ -126,11 +126,11 @@ class Convoy(Order):
             # Start and end must be coastal
             # TODO: Black sea separated from others
         if not self.unit.typ == UnitType.FLEET:
-            raise DiplomacyError()
+            raise OrderValidationError()
         if not (isinstance(self.start, CoastProvince) or isinstance(self.start, TwoCoastProvince)):
-            raise DiplomacyError()
+            raise OrderValidationError()
         if not (isinstance(self.end, CoastProvince) or isinstance(self.end, TwoCoastProvince)):
-            raise DiplomacyError()
+            raise OrderValidationError()
 
     def set_msg(self):
         self.msg = self.msgBase() + " C " + self.start.abr.capitalize() + "-" + self.end.abr.capitalize()
