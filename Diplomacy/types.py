@@ -9,6 +9,13 @@ from typing import NewType
 
 class DiplomacyError(Exception):
     pass
+
+class ParseOrderError(Exception):
+    pass
+
+class OrderValidationError(Exception):
+    pass
+
 class UnitType(Enum):
     """Each unit is an ARMY or a FLEET"""
     ARMY = auto()
