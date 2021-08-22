@@ -7,6 +7,6 @@ def parent(pid):
     
 if __name__ == '__main__':
     parent(os.getpid())
-    p = os.system('python .\\test_child.py')
+    p = os.system('python ./test_child.py')
     print('Parent says child is ', p)
     print('Parent Done!')
