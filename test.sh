@@ -2,4 +2,4 @@
 
 git pull
 
-python ./test_parent.py
+python ./Testing/test_parent.py
