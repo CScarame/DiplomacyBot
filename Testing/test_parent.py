@@ -6,7 +6,9 @@ def parent(pid):
     print('parent PID:', pid)
     
 if __name__ == '__main__':
-    currentTime = datetime.time
+    currentTime = datetime.today()
+    addTime = datetime.time(minute=1)
+    print(str(currentTime))
     print(currentTime)
     parent(os.getpid())
     p = os.system('python ./Testing/test_child.py')
