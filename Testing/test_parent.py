@@ -7,12 +7,10 @@ def parent(pid):
     print('parent PID:', pid)
     
 if __name__ == '__main__':
-    currentTime = datetime.datetime.today()
-    extraMinute = datetime.timedelta(seconds=60-currentTime.second-1,microseconds=1000000-currentTime.microsecond)
-    futureTime = currentTime + extraMinute
-    print(currentTime)
+    futureTime = datetime.datetime.today()
+    futureTime.replace(minute=futureTime.minute+1, second=0, microsecond=0)
     print(futureTime)
     parent(os.getpid())
-    p = os.system('python ./Testing/test_child.py {}'.format(futureTime))
+    p = os.system('python ./Testing/test_child.py {}'.format(str(futureTime).split()[1]))
     print('Parent Done!')
-    print(currentTime)
+    print(futureTime)
