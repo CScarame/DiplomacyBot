@@ -56,8 +56,8 @@ class Basic(commands.Cog):
                 message = await ctx.send(f"Timer: {time} seconds")
             while True:
                 try:
-                    await asyncio.sleep(5)
-                    time -= 5
+                    await asyncio.sleep(1)
+                    time -= 1
                     if time >= 3600:
                         await message.edit(content=f"Timer: {time//3600} hours {time %3600//60} minutes {time%60} seconds")
                     elif time >= 60:
