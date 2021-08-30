@@ -11,7 +11,7 @@ import Diplomacy
 
 import json
 import datetime
-import time
+import asyncio
 import subprocess
 
 def setup(bot):
@@ -31,5 +31,5 @@ class Basic(commands.Cog):
         futureTime = currentTime.replace(second=0,microsecond=0) + datetime.timedelta(minutes=1)
         while futureTime > currentTime:
             currentTime = datetime.datetime.today()
-            time.sleep(1)
+            await asyncio.sleep(1)
         await ctx.send("A new minute!")
