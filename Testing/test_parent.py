@@ -1,4 +1,5 @@
 import os
+import sys
 import datetime
 from multiprocessing import Process
 
@@ -12,7 +13,6 @@ if __name__ == '__main__':
     print(currentTime)
     print(futureTime)
     parent(os.getpid())
-    p = os.system('python ./Testing/test_child.py')
-    print('Parent says child is ', p)
+    p = os.system('python ./Testing/test_child.py {}'.format(futureTime))
     print('Parent Done!')
     print(currentTime)
