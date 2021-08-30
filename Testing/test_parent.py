@@ -4,7 +4,7 @@ import datetime
 from multiprocessing import Process
 
 def parent(pid):
-    print('parent PID:', pid)
+    print('parent PID: {}'.format(pid))
     
 if __name__ == '__main__':
     futureTime = datetime.datetime.today()
