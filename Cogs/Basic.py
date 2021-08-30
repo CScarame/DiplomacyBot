@@ -70,7 +70,7 @@ class Basic(commands.Cog):
                         break
                     timeDiff = datetime.datetime.now() - currentTime
                     print(timeDiff)
-                    await asyncio.sleep((1000.0-timeDiff)/1000)
+                    await asyncio.sleep((1000.0-timeDiff.microseconds)/1000)
                 except:
                     break
         except:
