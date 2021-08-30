@@ -69,7 +69,7 @@ class Basic(commands.Cog):
                         await ctx.send(f"{ctx.author.mention} Your countdown Has ended!")
                         break
                     timeDiff = datetime.datetime.now() - currentTime
-                    print((1000.0-timeDiff)/1000.0)
+                    print((1000.0-timeDiff.microseconds)/1000.0)
                     await asyncio.sleep((1000.0-timeDiff.microseconds)/1000)
                 except:
                     break
