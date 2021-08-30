@@ -7,7 +7,7 @@ def child(pid):
     
 if __name__ == '__main__':
     print('Arguments: {}'.format(sys.argv))
-    time_str = " ".join(sys.argv[1:2])
+    time_str = " ".join(sys.argv[1:])
     print(time_str)
     child(os.getpid())
     print('Child Done!')
