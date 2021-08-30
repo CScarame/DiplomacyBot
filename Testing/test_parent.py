@@ -7,8 +7,10 @@ def parent(pid):
     
 if __name__ == '__main__':
     currentTime = datetime.datetime.today()
-    print(str(currentTime))
+    futureTime = currentTime
+    futureTime.minute += 1
     print(currentTime)
+    print(futureTime)
     parent(os.getpid())
     p = os.system('python ./Testing/test_child.py')
     print('Parent says child is ', p)
