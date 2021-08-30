@@ -13,8 +13,7 @@ if __name__ == '__main__':
     futureTime = currentTime.replace(second=0, microsecond=0) + datetime.timedelta(minutes=1)
     print(futureTime)
     parent(os.getpid())
-    child = subprocess.Popen('python3 ./Testing/test_child.py')
-    #child = subprocess.Popen('python3 ./Testing/test_child.py {}'.format(str(futureTime).split()))
+    child = subprocess.Popen('./Testing/test_child.py {}'.format(str(futureTime).split()))
     while child.poll == None:
         print('Parent waiting for child...')
         time.sleep(5)
