@@ -7,7 +7,6 @@ def parent(pid):
     
 if __name__ == '__main__':
     currentTime = datetime.datetime.today()
-    addTime = datetime.datetime(minute=1)
     print(str(currentTime))
     print(currentTime)
     parent(os.getpid())
