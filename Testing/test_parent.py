@@ -7,7 +7,7 @@ def parent(pid):
     
 if __name__ == '__main__':
     currentTime = datetime.datetime.today()
-    extraMinute = datetime.timedelta(minutes=1)
+    extraMinute = datetime.timedelta(seconds=60-currentTime.seconds,microseconds=1000000-currentTime.microseconds)
     futureTime = currentTime + extraMinute
     print(currentTime)
     print(futureTime)
