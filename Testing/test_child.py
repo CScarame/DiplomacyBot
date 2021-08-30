@@ -10,7 +10,7 @@ if __name__ == '__main__':
     print('Arguments: {}'.format(sys.argv))
     time_str = " ".join(sys.argv[1:])
     print(time_str)
-    goalTime = datetime.datetime.strptime(time_str)
+    goalTime = datetime.datetime.strptime(time_str, '%Y-%M-%D %H:%M:S')
     while True:
         currentTime = datetime.datetime.now()
         if(goalTime < currentTime):
