@@ -8,7 +8,8 @@ def parent(pid):
     
 if __name__ == '__main__':
     futureTime = datetime.datetime.today()
-    futureTime.replace(minute=futureTime.minute+1, second=0, microsecond=0)
+    futureTime.replace(second=0, microsecond=0)
+    futureTime = futureTime + datetime.timedelta(minutes=1)
     print(futureTime)
     parent(os.getpid())
     p = os.system('python ./Testing/test_child.py {}'.format(str(futureTime)))
