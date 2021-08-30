@@ -11,8 +11,8 @@ def parent(pid):
 if __name__ == '__main__':
     currentTime = datetime.datetime.today()
     futureTime = currentTime.replace(second=0, microsecond=0) + datetime.timedelta(minutes=1)
-    print(futureTime)
     parent(os.getpid())
+    print('Current time is [{}], child will run until [{}]'.format(currentTime, futureTime))
     child = subprocess.Popen('python3 ./Testing/test_child.py {}'.format(str(futureTime)).split())
     while child.poll() == None:
         print('Parent waiting for child...')
