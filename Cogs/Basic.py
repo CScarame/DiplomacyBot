@@ -56,7 +56,7 @@ class Basic(commands.Cog):
                 message = await ctx.send(f"Timer: {time} seconds")
             while True:
                 try:
-                    await asyncio.sleep(1)
+                    currentTime = datetime.datetime.now()
                     time -= 1
                     if time >= 3600:
                         await message.edit(content=f"Timer: {time//3600} hours {time %3600//60} minutes {time%60} seconds")
@@ -68,6 +68,9 @@ class Basic(commands.Cog):
                         await message.edit(content="Ended!")
                         await ctx.send(f"{ctx.author.mention} Your countdown Has ended!")
                         break
+                    timeDiff = datetime.datetime.now() - currentTime
+                    print(timeDiff)
+                    await asyncio.sleep((1000.0-timeDiff)/1000)
                 except:
                     break
         except:
