@@ -5,4 +5,4 @@ git pull
 
 
 echo "Running thread test:"
-python ./Testing/test_parent.py
+python3 ./Testing/test_parent.py
